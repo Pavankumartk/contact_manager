@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #e6e7ee;
+    --foreground: #31344b;
+    --primary: #6d5dfc;
+    --primary-dark: #5b4ee4;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .neo-card {
+    background: #e6e7ee;
+    box-shadow: 8px 8px 16px #c1c2c8, -8px -8px 16px #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .neo-input {
+    background: #e6e7ee;
+    box-shadow: inset 8px 8px 16px #c1c2c8, inset -8px -8px 16px #ffffff;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .neo-input:focus {
+    box-shadow: inset 4px 4px 8px #c1c2c8, inset -4px -4px 8px #ffffff;
+    border-color: var(--primary);
+  }
+
+  .neo-button {
+    background: linear-gradient(145deg, #e6e7ee, #ffffff);
+    box-shadow: 4px 4px 8px #c1c2c8, -4px -4px 8px #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .neo-button:hover {
+    box-shadow: 2px 2px 4px #c1c2c8, -2px -2px 4px #ffffff;
+    transform: translateY(1px);
+  }
+
+  .neo-button-primary {
+    background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: 4px 4px 8px #5b4ee4, -4px -4px 8px #7f6cff;
+  }
+
+  .neo-button-danger {
+    background: linear-gradient(145deg, var(--danger), #dc2626);
+    color: white;
+    box-shadow: 4px 4px 8px #dc2626, -4px -4px 8px #f87171;
+  }
+}
+
+/* 
+.neo-input {
+  position: relative;
+  min-height: 30px;
+  font-size: 1rem; 
+} */
