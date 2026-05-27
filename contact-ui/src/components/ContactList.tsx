@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { Contact } from "../types/Contact";
+import { Contact } from "../types/contact";
 import { 
   getContacts,
   createContact,
