@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Contact } from "../types/Contact";
+import { Contact} from "../types/contact";
 
 const API = axios.create({
   baseURL: "http://localhost:3001/contacts",
