@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { Contact } from "../types/Contact";
+import { Contact } from "../types/contact";
 
 interface Props {
   onSubmit: (data: Contact) => void;
