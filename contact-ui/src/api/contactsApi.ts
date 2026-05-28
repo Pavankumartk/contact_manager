@@ -1,8 +1,10 @@
 import axios from "axios";
-import { Contact} from "../types/contact";
+import { Contact } from "../types/contact";
 
 const API = axios.create({
-  baseURL: "http://localhost:3001/contacts",
+  baseURL:
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:3001/contacts",
 });
 
 export const getContacts = (search: string) =>
