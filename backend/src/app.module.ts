@@ -17,26 +17,26 @@ import { Contact } from './entities/contact.entity';
 
       useFactory: (configService: ConfigService) => {
         const isProduction =
-          configService.get('NODE_ENV') === 'production';
+          configService.get<string>('NODE_ENV') === 'production';
 
         return {
-          type: 'postgres',
+          type: 'postgres' as const,
 
           ...(isProduction
             ? {
-                url: configService.get('DATABASE_URL'),
+                url: configService.get<string>('DATABASE_URL'),
                 ssl: {
                   rejectUnauthorized: false,
                 },
               }
             : {
-                host: configService.get('DB_HOST'),
+                host: configService.get<string>('DB_HOST'),
                 port: parseInt(
                   configService.get<string>('DB_PORT') || '5432',
                 ),
-                username: configService.get('DB_USERNAME'),
-                password: configService.get('DB_PASSWORD'),
-                database: configService.get('DB_DATABASE'),
+                username: configService.get<string>('DB_USERNAME'),
+                password: configService.get<string>('DB_PASSWORD'),
+                database: configService.get<string>('DB_DATABASE'),
               }),
 
           entities: [Contact],
